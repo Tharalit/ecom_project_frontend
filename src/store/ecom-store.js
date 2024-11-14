@@ -12,7 +12,7 @@ const ecomStore = (set, get) => ({
   products: [],
   carts: [],
   actionLogin: async (form) => {
-    const res = await axios.post(`http://localhost:5001/api/login`, form);
+    const res = await axios.post(`https://ecom-project-backend-coral.vercel.app/api/login`, form);
     set({
       user: res.data.payload,
       token: res.data.token,

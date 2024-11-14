@@ -1,31 +1,31 @@
 import axios from "axios";
 
 export const createProduct = async (token, form) =>
-  await axios.post(`http://localhost:5001/api/product`, form, {
+  await axios.post(`https://ecom-project-backend-coral.vercel.app/api/product`, form, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
 export const listProduct = async (count = 20) =>
-  await axios.get(`http://localhost:5001/api/products/${count}`);
+  await axios.get(`https://ecom-project-backend-coral.vercel.app/api/products/${count}`);
 
 export const readProduct = async (token, id) =>
-  await axios.get(`http://localhost:5001/api/product/${id}`, {
+  await axios.get(`https://ecom-project-backend-coral.vercel.app/api/product/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
 export const deleteProduct = async (token, id) =>
-  await axios.delete(`http://localhost:5001/api/product/${id}`, {
+  await axios.delete(`https://ecom-project-backend-coral.vercel.app/api/product/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
 export const updateProduct = async (token, id, form) =>
-  await axios.put(`http://localhost:5001/api/product/${id}`, form, {
+  await axios.put(`https://ecom-project-backend-coral.vercel.app/api/product/${id}`, form, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -33,7 +33,7 @@ export const updateProduct = async (token, id, form) =>
 
 export const uploadFiles = async (token, form) =>
   await axios.post(
-    `http://localhost:5001/api/images`,
+    `https://ecom-project-backend-coral.vercel.app/api/images`,
     { image: form },
     {
       headers: {
@@ -44,7 +44,7 @@ export const uploadFiles = async (token, form) =>
 
 export const removeFiles = async (token, publicId) =>
   await axios.post(
-    `http://localhost:5001/api/removeImages`,
+    `https://ecom-project-backend-coral.vercel.app/api/removeImages`,
     { publicId },
     {
       headers: {
@@ -54,7 +54,7 @@ export const removeFiles = async (token, publicId) =>
   );
 
 export const searchFilters = async (arg) =>
-  await axios.post(`http://localhost:5001/api/search/filters`, arg);
+  await axios.post(`https://ecom-project-backend-coral.vercel.app/api/search/filters`, arg);
 
 export const listProductBy = async (sort, order, limit) =>
-  await axios.post(`http://localhost:5001/api/productby`, { sort, order, limit });
+  await axios.post(`https://ecom-project-backend-coral.vercel.app/api/productby`, { sort, order, limit });

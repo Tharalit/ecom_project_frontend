@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <div>
       <MainNav />
-      <main className="h-full px-4 mt-2 mx-auto">
+      <main className="h-full   mx-auto">
         <Outlet />
       </main>
     </div>

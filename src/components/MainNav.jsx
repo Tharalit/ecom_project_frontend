@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import useEcomStore from "../store/ecom-store";
 import { ChevronDown } from "lucide-react";
 
@@ -8,6 +8,8 @@ export default function MainNav() {
   const carts = useEcomStore((state) => state.carts);
   const user = useEcomStore((state) => state.user);
   const actionLogout = useEcomStore((state) => state.actionLogout);
+
+  const navigate = useNavigate();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -75,17 +77,20 @@ export default function MainNav() {
                 <ChevronDown />
               </button>
               {isOpen && (
-                <div className="absolute top-16 bg-teal-400 shadow-md  ">
-                  <Link className="block hover:bg-teal-200 px-4 py-2 ">History</Link>
-                  <Link
+                <div className="absolute top-16 bg-teal-400 shadow-md z-10">
+                  <Link to={"/user/history"} className="block hover:bg-teal-200 px-4 py-2 ">
+                    History
+                  </Link>
+                  <button
                     onClick={() => {
                       actionLogout();
                       setIsOpen(false);
+                      navigate("/login");
                     }}
                     className="block hover:bg-teal-200 px-4 py-2 "
                   >
                     Logout
-                  </Link>
+                  </button>
                 </div>
               )}
             </div>

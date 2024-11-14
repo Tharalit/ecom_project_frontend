@@ -45,15 +45,32 @@ const Login = () => {
   };
 
   return (
-    <div>
-      Login
-      <form action="" onSubmit={handleSubmit}>
-        Email
-        <input className="border" name="email" type="email" onChange={handleOnChange} />
-        Password
-        <input className="border" name="password" type="text" onChange={handleOnChange} />
-        <button className="bg-blue-500 rounded-md">Login</button>
-      </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="w-full bg-white shadow-md p-8 max-w-md">
+        <h1 className="text-2xl text-center my-4 font-bold">Login</h1>
+        <form action="" onSubmit={handleSubmit}>
+          <div className="space-y-4">
+            <input
+              className="border focus:outline-none focus:ring-2 focus:ring-blue-500 w-full px-3 py-2 rounded-md focus:border-transparent"
+              name="email"
+              type="email"
+              placeholder="Email"
+              onChange={handleOnChange}
+            />
+
+            <input
+              className="border focus:outline-none focus:ring-2 focus:ring-blue-500 w-full px-3 py-2 rounded-md focus:border-transparent"
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={handleOnChange}
+            />
+            <button className="bg-blue-500 rounded-md w-full text-white font-bold py-2 shadow hover:bg-blue-700">
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
