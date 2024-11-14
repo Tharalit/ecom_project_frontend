@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { listProductBy } from "../../APIs/product";
 import ProductCard from "../cards/ProductCard";
-import SwiperShowProduct from "../../utils/swiperShowProduct";
+import SwiperShowProduct from "../../utils/SwiperShowProduct";
 import { SwiperSlide } from "swiper/react";
 
 function BestSellingProducts() {
